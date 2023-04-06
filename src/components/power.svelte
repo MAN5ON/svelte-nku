@@ -19,7 +19,6 @@
         let msg = message.toString()
         if (!isNaN(msg)) {
         power = Number(message.toString());
-        console.log('newPower')
         }
       }
     });
@@ -27,7 +26,6 @@
   
 function handleChange(event) {
     let newPower = event.target.value;
-    console.log(newPower)
     if (newPower !== power) {
       client.publish("power", newPower, {retain: true});
       localStorage.setItem("power", newPower)
